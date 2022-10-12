@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.container{
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url('img/20180411parede-branca.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 100%;
+    display:flex;
+    
+}
+.tela{
+    background-color: #adadad;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    border-radius: 5px 5px 0px 0px;
+}
+.triangulo{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 20px 10px;
+    border-color: transparent transparent #adadad transparent;
+
+}
+
+.trianguloDescendo{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0 10px;
+    border-color: #acafac transparent transparent transparent;
+}
+#numberAndar{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    margin: 5px;
+    width: 40px;
+    color: orange;
+    border-radius: 5px;
+}
+
+.img-elevador{
+    width: 200px;
+    height: 300px;
+}
+
+.painel{
+    width: 50px;
+    background-color:rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.56);
+}
+
+.painel button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: black;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #a9eca9;
+
+}
+.painel button:disabled{
+    background-color: #ecada9;
+}
+
+@keyframes transicaoSubir{
+    0%{
+        border-color: transparent transparent#a9eca9  transparent; 
+    }
+
+    100%{
+        border-color: transparent transparent rgb(102, 185, 102) transparent; 
+      
+    }
+}
+
+@keyframes transicaoDescer{
+    0%{
+        border-color: #ecada9 transparent transparent transparent; 
+    }
+
+    100%{
+        border-color: rgb(185, 102, 102) transparent transparent transparent; 
+      
+    }
+}
+
+@media (max-width: 500px) {
+    
+    .container{
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .tela{
+        height: 10vh;
+    }
+    .triangulo{
+        border-width: 0 20px 30px 20px;
+    }
+    .trianguloDescendo{
+        border-width: 30px 20px 0 20px;
+    }
+    #numberAndar{
+        width: 70px;
+        padding: 10px;
+    }
+    .img-elevador{
+        width: 80vw;
+        height: 60vh;
+    }
+    .painel{
+        width: 80vw;
+        height: 80px;
+        flex-direction: row-reverse;
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+    .painel button{
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Elevador de Carga</title>
+</head>
+<body>
+    <main class="container">
+        <div class="elevador">
+            <div class="tela">
+                <div class="triangulo"></div>
+                <h1 id="numberAndar">1</h1>
+                <div class="trianguloDescendo"></div>
+            </div>
+            <img src="img/elevadorFechado.jpg" alt="" class="img-elevador">
+        </div>
+        <div class="painel">
+            <button id="btn-terreo" value="terreo" onclick="descerTerreoAndar()" disabled>T</button>
+            <button id="btn-primeiro" value="1" onclick="subirPrimeiroAndar()">1</button>
+            <button id="btn-segundo" value="2" onclick="subirSegundoAndar()">2</button>
+            <button id="btn-terceiro"value="3" onclick="subirTerceiroAndar()">3</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
