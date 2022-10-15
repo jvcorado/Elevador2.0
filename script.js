@@ -10,155 +10,129 @@ const numberAndar = document.querySelectorAll('#numberAndar');
 const triangulo = document.querySelector('.triangulo');
 const trianguloDescendo = document.querySelector('.trianguloDescendo');
 
+let atual = 0;
+let andar = 'T';
 
-let andar = null;
-let pos = null;
-let porta = 1 // aberto / 0 fechado
+
+function mostraAndar(){
+    setTimeout(()=>{
+        document.querySelector("#numberAndar").innerText = atual;
+    },2000);
+  
+}
 
 function mostraTrianguloSubindo(){
-    setTimeout(()=>{
-        triangulo.style.animation ='transicaoSubir 5s linear ';
-    },2000);
+    triangulo.style.animation ='transicaoSubir 3s linear ';
 }
 
 function mostraTrianguloDescendo(){
-    setTimeout(()=>{
-        trianguloDescendo.style.animation = 'transicaoDescer 6s linear '; 
-    },2000);
+    trianguloDescendo.style.animation = 'transicaoDescer 3s linear '; 
 }
 
-function descerTerreoAndar(){
-    andar = "T";
-    pos = 0;
-    porta = 1;
-    
-
-    if(pos === 0){
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },1000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
-        },2000);
-        mostraTrianguloDescendo();
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText = 2;
-        },3000);
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText = 1;
-        },4000);
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText = andar;
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },5000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
-        },6000);
-    };
-    
-     
-    document.querySelector('#btn-primeiro').disabled= false;
-    document.querySelector('#btn-segundo').disabled= false;
-    document.querySelector('#btn-terreo').disabled= true;
-    document.querySelector('#btn-terceiro').disabled= false;
-
-}
-
-function subirPrimeiroAndar(){
-    andar = 1;
-    pos = andar;
-    porta = 1;
-
-
-
-
-
-    if(pos === andar){
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },1000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
-        },2000);
-        mostraTrianguloSubindo();
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText = andar;
-        },3000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },4000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
-        },5000);
-    }
-    
-    document.querySelector('#btn-terreo').disabled= false;
-    document.querySelector('#btn-primeiro').disabled= true;
-   
-}
-
-
-function subirSegundoAndar(){
-    andar = 2;
-    pos = andar;
-    porta = 1;
-
-    if(pos === andar){
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },1000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
-        },2000);
-        mostraTrianguloSubindo();
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText =  1;
-        },3000);
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText =  andar;
-        },4000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },5000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
-        },6000);
-    }
-   
-    document.querySelector('#btn-terreo').disabled= false;
-    document.querySelector('#btn-primeiro').disabled= true;
-    document.querySelector('#btn-segundo').disabled= true;
-    document.querySelector('#btn-terceiro').disabled= false;
-
-}
-
-function subirTerceiroAndar(){
-    andar = 3;
-    pos = andar;
-    porta = 1;
-
-    if(pos === andar){
-        mostraTrianguloSubindo();
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },1000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
-        },2000);
-        setTimeout(()=>{
-            document.querySelector("#numberAndar").innerText = andar;
-        },3000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
-        },4000);
-        setTimeout(()=>{
-            document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
-        },5000);
-    }
-    
-    document.querySelector('#btn-terreo').disabled= false;
-    document.querySelector('#btn-terceiro').disabled= true;
-    document.querySelector('#btn-primeiro').disabled= true;
-    document.querySelector('#btn-segundo').disabled= true;
+function animacoes(destino){
   
+    if(atual === 0){
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+        },1000);
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
+        },2000); 
+    }
+    else if(atual === 1){
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+        },1000);
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
+        },2000);
+    }
+    else if(atual === 2){
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+        },1000);
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
+        },2000);
+    }
+    else if(atual === 3){
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+        },1000);
+        setTimeout(()=>{
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
+        },2000);
+    } 
+    setTimeout(()=>{
+        if(destino === 0){
+            mostraTrianguloDescendo();
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+            },1000);
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
+            },2000);
+        }
+        else if(destino === 1){
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+            },1000);
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
+            },2000);
+        }
+    
+        else if(destino === 2){
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+            },1000);
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
+            },2000);
+        }
+        
+        else if(destino === 3){
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
+            },1000);
+            setTimeout(()=>{
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
+            },2000);
+        }
+    },2000);
+    atual = destino;
+    botoes();
+}
+
+function subir(destino){
+    mostraTrianguloSubindo();
+    mostraAndar();
+    animacoes(destino);
+}
+
+function botoes(){
+    if(atual === 0){
+        document.querySelector('#btn-terreo').disabled= true;
+        document.querySelector('#btn-primeiro').disabled= false;
+        document.querySelector('#btn-segundo').disabled= false;
+        document.querySelector('#btn-terceiro').disabled= false;
+    }
+    else if(atual === 1){
+        document.querySelector('#btn-terreo').disabled= false;
+        document.querySelector('#btn-primeiro').disabled= true;
+        document.querySelector('#btn-segundo').disabled= false;
+        document.querySelector('#btn-terceiro').disabled= false;
+    }
+    else if(atual === 2){
+        document.querySelector('#btn-terreo').disabled= false;
+        document.querySelector('#btn-primeiro').disabled= true;
+        document.querySelector('#btn-segundo').disabled= true;
+        document.querySelector('#btn-terceiro').disabled= false;
+    }
+    else if(atual === 3){
+        document.querySelector('#btn-terreo').disabled= false;
+        document.querySelector('#btn-primeiro').disabled= true;
+        document.querySelector('#btn-segundo').disabled= true;
+        document.querySelector('#btn-terceiro').disabled= true;
+    }
 }
