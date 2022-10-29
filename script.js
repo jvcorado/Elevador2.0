@@ -103,73 +103,73 @@ function animacoes(destino){
     
     if(atual === 0){
         setTimeout(()=>{
-            document.querySelector('.img-terreo').src="img/elevadorSemiAberto.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
         },2000);
         setTimeout(()=>{
-            document.querySelector('.img-terreo').src="img/elevadorFechado.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
         },3000); 
     }
     else if(atual === 1){
         setTimeout(()=>{
-            document.querySelector('.img-primeiroAndar').src="img/elevadorSemiAberto.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
         },2000);
         setTimeout(()=>{
-            document.querySelector('.img-primeiroAndar').src="img/elevadorFechado.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
         },3000);
     }
     else if(atual === 2){
         setTimeout(()=>{
-            document.querySelector('.img-segundoAndar').src="img/elevadorSemiAberto.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
         },2000);
         setTimeout(()=>{
-            document.querySelector('.img-segundoAndar').src="img/elevadorFechado.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
         },3000);
     }
     else if(atual === 3){
         setTimeout(()=>{
-            document.querySelector('.img-terceiroAndar').src="img/elevadorSemiAberto.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
         },2000);
         setTimeout(()=>{
-            document.querySelector('.img-terceiroAndar').src="img/elevadorFechado.jpg";
+            document.querySelector('.img-elevador').src="img/elevadorFechado.jpg";
         },3000);
     } 
     setTimeout(()=>{
         if(destino === 0){
             mostraTrianguloDescendo();
             setTimeout(()=>{
-                document.querySelector('.img-terreo').src="img/elevadorSemiAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
             },2000);
             setTimeout(()=>{
-                document.querySelector('.img-terreo').src="img/elevadorAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
             },3000);
         }
         else if(destino === 1){
             mostraTrianguloSubindo();
             setTimeout(()=>{
-                document.querySelector('.img-primeiroAndar').src="img/elevadorSemiAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
             },2000);
             setTimeout(()=>{
-                document.querySelector('.img-primeiroAndar').src="img/elevadorAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
             },3000);
         }
     
         else if(destino=== 2){
             mostraTrianguloSubindo();
             setTimeout(()=>{
-                document.querySelector('.img-segundoAndar').src="img/elevadorSemiAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
             },2000);
             setTimeout(()=>{
-                document.querySelector('.img-segundoAndar').src="img/elevadorAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
             },3000);
         }
         
         else if(destino === 3){
             mostraTrianguloSubindo();
             setTimeout(()=>{
-                document.querySelector('.img-terceiroAndar').src="img/elevadorSemiAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorSemiAberto.jpg";
             },2000);
             setTimeout(()=>{
-                document.querySelector('.img-terceiroAndar').src="img/elevadorAberto.jpg";
+                document.querySelector('.img-elevador').src="img/elevadorAberto.jpg";
             },3000);
         }
     },3000);
